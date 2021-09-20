@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Sign Up - CodeJava</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+	<div class="container text-center">
+		<h1>Person Registration</h1>
+	</div>
+	<form th:action="@{/process_register}" th:object="${user}"
+		  method="post" style="max-width: 600px; margin: 0 auto;">
+		<div >
+
+			<div >
+				<label >First Name </label>
+				<div >
+					<input type="text" th:field="*{firstName}" class="form-control"
+						   required minlength="2" maxlength="20"/>
+				</div>
+			</div>
+
+			<div >
+				<label >Last Name </label>
+				<div >
+					<input type="text" th:field="*{lastName}" class="form-control"
+						   required minlength="2" maxlength="20" />
+				</div>
+			</div>
+			<div >
+				<label >E-mail </label>
+				<div >
+					<input type="email" th:field="*{email}" class="form-control" required />
+				</div>
+			</div>
+			<div >
+				<label >Age </label>
+				<div >
+					<input type="number" th:field="*{age}" class="form-control"
+						   required minlength="2" maxlength="20"/>
+				</div>
+			</div>
+
+			<div >
+				<label >City </label>
+				<div >
+					<input type="text" th:field="*{city}" class="form-control"
+						   required minlength="2" maxlength="20" />
+				</div>
+			</div>
+			<div >
+				<label >Course </label>
+				<div >
+					<input type="text" th:field="*{course}" class="form-control"
+						   required minlength="2" maxlength="10"/>
+				</div>
+			</div>
+			<div >
+				<label >Password </label>
+				<div >
+					<input type="password" th:field="*{password}" class="form-control"
+						   required  maxlength="10"/>
+				</div>
+			</div>
+			<br>
+			<div>
+				<button type="submit" >Sign Up</button>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>
